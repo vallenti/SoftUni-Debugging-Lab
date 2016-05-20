@@ -1,20 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @vallenti
- Unwatch 1
-  Star 0
- Fork 0 vallenti/SoftUni-Debugging-Lab
- Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs  Settings
-Branch: master Find file Copy path
-SoftUni-Debugging-Lab/BePositive.cs
-6d09427  a day ago
-@vallenti vallenti Rename BePositive to BePositive.cs
-1 contributor
-RawBlameHistory     74 lines (61 sloc)  1.94 KB
 namespace BePositive
 {
     using System;
