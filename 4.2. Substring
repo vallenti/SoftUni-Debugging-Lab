@@ -18,11 +18,11 @@ namespace Debugging_Substring
                 {
                     hasMatch = true;
 
-                    int endIndex = jump + 1;
+                    int length = jump + 1;
                     string matchedString;
-                    if (i + endIndex <= text.Length)
+                    if (i + length <= text.Length)
                     {
-                        matchedString = text.Substring(i, endIndex);
+                        matchedString = text.Substring(i, length);
                     }
                     else
                     {
