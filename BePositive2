@@ -1,1 +1,87 @@
-sd
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @vallenti
+ Unwatch 1
+  Star 0
+ Fork 0 vallenti/SoftUni-Debugging-Lab
+ Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs  Settings
+Branch: master Find file Copy path
+SoftUni-Debugging-Lab/BePositive.cs
+6d09427  a day ago
+@vallenti vallenti Rename BePositive to BePositive.cs
+1 contributor
+RawBlameHistory     74 lines (61 sloc)  1.94 KB
+namespace BePositive
+{
+    using System;
+    using System.Collections.Generic;
+
+    public class BePositiveMain
+    {
+        public static void Main()
+        {
+            int countSequences = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < countSequences; i++)
+            {
+                string[] input = Console.ReadLine().Trim().Split(' ');
+                var numbers = new List<int>();
+
+                for (int j = 0; j < input.Length; j++)
+                {
+                    if (!input[j].Equals(string.Empty))
+                    {
+                        int num = int.Parse(input[j]);
+                        numbers.Add(num);
+                    }
+                }
+
+                bool found = false;
+
+                for (int j = 0; j < numbers.Count; j++)
+                {
+                    int currentNum = numbers[j];
+
+                    if (currentNum >= 0)
+                    {
+                        if (found)
+                        {
+                            Console.Write(" ");
+                        }
+
+                        Console.Write(currentNum);
+                        found = true;
+                    }
+                    else if (j + 1 < numbers.Count)
+                    {
+                        currentNum += numbers[j + 1];
+                        
+                        if (currentNum >= 0)
+                        {
+                            if (found)
+                            {
+                                Console.Write(" ");
+                            }
+
+                            Console.Write(currentNum);
+                            found = true;
+                        }
+                        
+                        numbers.RemoveAt(j + 1);
+                    }
+                }
+
+                if (!found)
+                {
+                    Console.Write("(empty)");
+                }
+                
+                Console.WriteLine();
+            }
+        }
+    }
+}
