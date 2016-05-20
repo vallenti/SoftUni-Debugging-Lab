@@ -1,6 +1,7 @@
 namespace BePositive
 {
     using System;
+    using System.Linq;
     using System.Collections.Generic;
 
     public class BePositiveMain
@@ -11,17 +12,10 @@ namespace BePositive
 
             for (int i = 0; i < countSequences; i++)
             {
-                string[] input = Console.ReadLine().Trim().Split(' ');
-                var numbers = new List<int>();
-
-                for (int j = 0; j < input.Length; j++)
-                {
-                    if (!input[j].Equals(string.Empty))
-                    {
-                        int num = int.Parse(input[j]);
-                        numbers.Add(num);
-                    }
-                }
+                var numbers = Console.ReadLine()
+                    .Split(new char[]{' '}, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(int.Parse)
+                    .ToList();
 
                 bool found = false;
 
